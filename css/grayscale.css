@@ -124,7 +124,7 @@ a:focus, a:hover {
   padding: 200px 0;
   text-align: center;
   color: white;
-  background: url("../img/intro-bg.jpg") no-repeat bottom center scroll;
+  background: url("https://wallpaperscraft.com/image/city_evening_night_blue_building_764_1920x1080.jpg") no-repeat bottom center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -184,7 +184,7 @@ a:focus, a:hover {
   padding-bottom: 150px;
 }
 
-.download-section {
+.resume-section {
   color: white;
   background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
   background-color: black;
