@@ -38,7 +38,7 @@ $(document).ready(function(){
     <meta name="description" content="">
     <meta name="author" content="">
 
-    <title>Joseph's Personal Site</title>
+    <title>Joseph Gonzales</title>
 
     <!-- Bootstrap core CSS -->
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
@@ -87,8 +87,6 @@ $(document).ready(function(){
             <div class="col-lg-8 mx-auto">
               <h5 class="display-3">Joseph L. Gonzales</h5>
               <p class="intro-text">"Create, Innovate, and Reiterate"</p>
-              <a href="#about" class="btn btn-circle js-scroll-trigger">
-                <i class="fa fa-angle-double-down animated"></i>
               </a>
             </div>
           </div>
@@ -113,13 +111,22 @@ $(document).ready(function(){
     </section>
 
     <!-- Resume Section -->
-    <section id="resume" class="resume-section content-section text-center">
+    <section id="resume" class="resume-section content-section text-left">
       <div class="container">
-        <div class="col-lg-8 mx-auto">
-          <h2>Resume</h2>
-          <p>This is where I will organize my experiences and how it applies to my future career in technology.</p>
+        <div class="row">
+        <div class="col-lg-6 mx-auto">
+          <h2>Technologies</h2>
+          Left Side.
+        </div>
+        <div class="col-lg-6 mx-auto">
+          <h2>Education</h2>
+          <p><a href=""><b>Bachelor of Science in Information Technology<br>Minor in Computer Science</b></a><br>New Jersey Institute of Technology, Newark, NJ, 2014 - 2018</p>
+          <p><b><a href="https://www.certmetrics.com/comptia/public/verification.aspx?code=XS2R330HKCFQ1JKY">ComptTIA A+ Certification</b></a><br>September, 2017</p>
+          <p><b><a href="https://www.youracclaim.com/badges/9bd91995-eab5-4ec5-8fe9-5cbbc643bcaf">Juniper Networks Certified Associate, Junos (JNCIA-Junos)</b></a><br>July, 2017</p>
+
           <a href="Resume_Updated.pdf" class="btn btn-default btn-lg" download>Download CV</a>
         </div>
+      </div>
       </div>
     </section>
     <!-- Contact Section -->
@@ -156,6 +163,8 @@ $(document).ready(function(){
             <a onclick = "showForm()" class="btn btn-default btn-lg" id="showForm">Show Form</a>
           </div>
         </div>
+
+
 
       <!--Contact Form -->
        <form id ="contact-form" style="display:none" action="email.php" method="post" >
