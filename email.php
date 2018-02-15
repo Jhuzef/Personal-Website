@@ -14,13 +14,6 @@ $subject = $_POST[subject];
     echo "You didn't fill in the FROM field!";
     exit;
   } else {
-    // check if e-mail address is well-formed
-    if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-      echo "You filled Invalid FROM field!";
-      exit;
-    }
-    else
-    {
     $email = $_POST[email];
     }
   }
