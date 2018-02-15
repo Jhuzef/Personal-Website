@@ -3,7 +3,7 @@
   if (isset($_POST['email']))  {
   
   //Email information
-  $admin_email = "josephgonzales034@gmail.com";
+  $admin_email = "cryptoknights@mailinator.com";
   $email = $_POST['email'];
   $subject = $_POST['subject'];
   $comment = $_POST['message'] . "\nMessage sent by: " . $_POST['name'];
