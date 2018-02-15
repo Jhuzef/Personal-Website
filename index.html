@@ -1,3 +1,13 @@
+<script> function showForm() {
+var x = document.getElementById("contact-form");
+    if (x.style.display === "none") {
+        x.style.display = "block";
+    } else {
+        x.style.display = "none";
+    }
+
+}</script>
+
 <!DOCTYPE html>
 <html lang="en">
 <!-- Template Source : https://startbootstrap.com/template-overviews/grayscale/ -->
@@ -56,7 +66,7 @@
           <div class="row">
             <div class="col-lg-8 mx-auto">
               <h5 class="display-3">Joseph L. Gonzales</h5>
-              <p class="intro-text">"Personal Quote Here"</p>
+              <p class="intro-text">"Create, Innovate, and Reiterate"</p>
               <a href="#about" class="btn btn-circle js-scroll-trigger">
                 <i class="fa fa-angle-double-down animated"></i>
               </a>
@@ -65,12 +75,14 @@
         </div>
       </div>
     </header>
-
     <!-- About Section -->
-    <section id="about" class="content-section text-center">
+    <section id="about" class="content-section text-left">
       <div class="container">
         <div class="row">
-          <div class="col-lg-8 mx-auto">
+          <div class="col-lg-6 mx-auto">
+              <img src="https://universalbackground.com/wordpress/wp-content/uploads/2016/08/slide-man.png">
+          </div>
+          <div class="col-lg-6 mx-auto">
             <h2>About Me</h2>
             <p>I am a New Jersey Institute of Technology undergraduate majoring in Information Technology with a minor in Computer Science. I am expected to graduate this December of 2018, and I am really looking forward to being a part of the technology industry. </p>
             <p>My motivation to learn is fueled by the continuous convenience that technology provides us. I find myself tackling problems that, at face value, seem small but as I dissect the core issues, I find a lot more complexity behind it. This complexity drives me to learn new concepts and skills in technology to ultimately achieve my solution.</p>
@@ -90,7 +102,6 @@
         </div>
       </div>
     </section>
-
     <!-- Contact Section -->
     <section id="contact" class="content-section text-center">
       <div class="container">
@@ -118,21 +129,50 @@
                 </a>
               </li>
             </ul>
+            <br>
+            <h2>You can reach me directly at</h2>
+            <p>Mobile Phone: 862-571-8362<br>E-Mail: josephgonzales034@gmail.com<br>Feel free to use the e-mail form below, at your convenience.</p>
+
+            <a onclick = "showForm()" class="btn btn-default btn-lg" download id="showForm">Show Form</a>
           </div>
         </div>
+
+      <!--Contact Form -->
+       <form id ="contact-form" style="display:none" action="email.php" method="post" >
+         <div class="form-group col-md-8 offset-sm-2 text-left" > <!-- Name field -->
+           <label class="control-label " for="name">Name</label>
+          <input class="form-control" id="name" name="name" type="text" required="required"/>
+         </div>
+  
+          <div class="form-group input-group-sm col-md-8 offset-sm-2 text-left"> <!-- Email field -->
+           <label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
+          <input class="form-control" id="email" name="email" type="text" required="required"/>
+         </div>
+  
+       <div class="form-group col-md-8 offset-sm-2 text-left"> <!-- Subject field -->
+           <label class="control-label " for="subject">Subject</label>
+          <input class="form-control" id="subject" name="subject" type="text" required="required"/>
+         </div>
+    
+         <div class="form-group col-md-8 offset-sm-2 text-left"> <!-- Message field -->
+          <label class="control-label " for="message">Message</label>
+          <textarea class="form-control" cols="40" id="message" name="message" rows="10" required="required"></textarea>
+         </div>
+  
+        <div class="form-group col-md-8 offset-sm-2">
+          <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+        </div>
+  
+       </form> 
       </div>
     </section>
 
-    <!-- Map Section -->
-    <div id="map"></div>
-
-    <!-- Footer 
     <footer>
       <div class="container text-center">
-        <p>Copyright &copy; Your Website 2018</p>
+        <p>Copyright &copy; Joseph Gonzales 2018</p>
       </div>
     </footer>
-    -->
+ 
     <!-- Bootstrap core JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js"></script>
@@ -140,8 +180,7 @@
     <!-- Plugin JavaScript -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.4.1/jquery.easing.min.js"></script>
 
-    <!-- Google Maps API Key - Use your own API key to enable the map feature. More information on the Google Maps API can be found at https://developers.google.com/maps/ -->
-    <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDfERwW2DWCVGXaVCnu6oGKK23sMpC_1Lo&sensor=false"></script>
+ 
 
     <!-- Custom scripts for this template -->
     <script src="js/grayscale.min.js"></script>
@@ -149,3 +188,4 @@
   </body>
 
 </html>
+

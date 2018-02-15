@@ -192,3 +192,8 @@ function init() {
     icon: image
   });
 }
+
+function showForm() {
+$("#contactform").click(function() { $("#contact-form").show(); };
+
+}
