@@ -5,14 +5,15 @@ var x = document.getElementById("contact-form");
     } else {
         x.style.display = "none";
     }
+}
 
 $(document).ready(function(){
-    $( "#showForm" ).click(function( event ) {
+    $( "#submit" ).click(function( event ) {
         //values
         var name=document.getElementById('name').value;
         var email=document.getElementById('email').value;
         var message=document.getElementById('message').value;
-        var subject=document.getElementById('subject'.value;)
+        var subject =document.getElementById('subject').value;
         var dataString = {"name": name, "email":email, "message":message, "subject":subject}
         $.ajax({
             type:"post",
@@ -25,8 +26,7 @@ $(document).ready(function(){
       event.preventDefault();
     });
 });
-
-}</script>
+</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -153,14 +153,12 @@ $(document).ready(function(){
             <h2>You can reach me directly at</h2>
             <p>Mobile Phone: 862-571-8362<br>E-Mail: josephgonzales034@gmail.com<br>Feel free to use the e-mail form below, at your convenience.</p>
 
-            <a onclick = "showForm()" class="btn btn-default btn-lg" download id="showForm">Show Form</a>
+            <a onclick = "showForm()" class="btn btn-default btn-lg" id="showForm">Show Form</a>
           </div>
         </div>
 
       <!--Contact Form -->
        <form id ="contact-form" style="display:none" action="email.php" method="post" >
-        <center><div id="feedback" class="alert alert-success"></div></center>
-
          <div class="form-group col-md-8 offset-sm-2 text-left" > <!-- Name field -->
            <label class="control-label " for="name">Name</label>
           <input class="form-control" id="name" name="name" type="text" required="required"/>
