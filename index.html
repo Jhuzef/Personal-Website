@@ -6,6 +6,26 @@ var x = document.getElementById("contact-form");
         x.style.display = "none";
     }
 
+$(document).ready(function(){
+    $( "#showForm" ).click(function( event ) {
+        //values
+        var name=document.getElementById('name').value;
+        var email=document.getElementById('email').value;
+        var message=document.getElementById('message').value;
+        var subject=document.getElementById('subject'.value;)
+        var dataString = {"name": name, "email":email, "message":message, "subject":subject}
+        $.ajax({
+            type:"post",
+            url:"email.php",
+            data: dataString,
+            success: function(html) {
+                $('#feedback').html(html);
+            }
+        });
+      event.preventDefault();
+    });
+});
+
 }</script>
 
 <!DOCTYPE html>
@@ -139,6 +159,8 @@ var x = document.getElementById("contact-form");
 
       <!--Contact Form -->
        <form id ="contact-form" style="display:none" action="email.php" method="post" >
+        <center><div id="feedback" class="alert alert-success"></div></center>
+
          <div class="form-group col-md-8 offset-sm-2 text-left" > <!-- Name field -->
            <label class="control-label " for="name">Name</label>
           <input class="form-control" id="name" name="name" type="text" required="required"/>
