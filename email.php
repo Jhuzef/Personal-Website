@@ -14,8 +14,8 @@ $subject = $_POST[subject];
     echo "You didn't fill in the FROM field!";
     exit;
   } else {
+    // check if e-mail address is well-formed
     $email = $_POST[email];
-    }
   }
 if (!isset($_POST[message]) || empty($_POST[message]))
 {
