@@ -1,4 +1,6 @@
 <?php
+
+/*
 $to = "josephgonzales034@gmail.com";  // Your email address will be here
 if (!isset($_POST[name]) || empty($_POST[name]))
 {
@@ -37,6 +39,19 @@ else
 {
 echo"<p>Error!</p>\n";
 echo"<p>The mail() function failed.</p>";
-}
+} */
+
+require 'vendor/autoload.php';
+$sendgrid = new SendGrid("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");
+$email    = new SendGrid\Email();
+
+$email->addTo($_POST[email])
+      ->setFrom("josephgonzales034@gmail.com")
+      ->setSubject($_POST[message] . "\nFrom: " . $_POST[name])
+      ->setHtml($_POST[subject]);
+
+$sendgrid->send($email);
+
+
 
 ?>
