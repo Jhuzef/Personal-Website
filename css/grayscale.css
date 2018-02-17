@@ -186,7 +186,7 @@ a:focus, a:hover {
 
 .resume-section {
   color: white;
-  background: url("https://wallpaperscraft.com/image/line_black_background_route_map_63533_1920x1080.jpg") no-repeat center center scroll;
+  background: url("../img/downloads-bg.jpg") no-repeat center center scroll;
   background-color: black;
   -webkit-background-size: cover;
   -moz-background-size: cover;
@@ -280,4 +280,10 @@ img::selection {
 
 img::-moz-selection {
   background: transparent;
+}
+
+.carousel-caption {
+    position: relative;
+    left: auto;
+    right: auto;
 }
