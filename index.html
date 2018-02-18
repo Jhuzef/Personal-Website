@@ -1,32 +1,4 @@
-<script> function showForm() {
-var x = document.getElementById("contact-form");
-    if (x.style.display === "none") {
-        x.style.display = "block";
-    } else {
-        x.style.display = "none";
-    }
-}
 
-$(document).ready(function(){
-    $( "#submit" ).click(function( event ) {
-        //values
-        var name=document.getElementById('name').value;
-        var email=document.getElementById('email').value;
-        var message=document.getElementById('message').value;
-        var subject =document.getElementById('subject').value;
-        var dataString = {"name": name, "email":email, "message":message, "subject":subject}
-        $.ajax({
-            type:"post",
-            url:"email.php",
-            data: dataString,
-            success: function(html) {
-                $('#feedback').html(html);
-            }
-        });
-      event.preventDefault();
-    });
-});
-</script>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -48,9 +20,40 @@ $(document).ready(function(){
     <link href="https://fonts.googleapis.com/css?family=Lora:400,700,400italic,700italic" rel="stylesheet" type="text/css">
     <link href='https://fonts.googleapis.com/css?family=Cabin:700' rel='stylesheet' type='text/css'>
 
+    <!-- Ajax -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+
     <!-- Custom styles for this template -->
     <link href="css/grayscale.css" rel="stylesheet">
+    <script> function showForm() {
+    var x = document.getElementById("contact-form");
+        if (x.style.display === "none") {
+            x.style.display = "block";
+        } else {
+            x.style.display = "none";
+        }
+    }
 
+    $(document).ready(function(){
+        $( "#submit" ).click(function( event ) {
+            //values
+            var name=document.getElementById('name').value;
+            var email=document.getElementById('email').value;
+            var message=document.getElementById('message').value;
+            var subject =document.getElementById('subject').value;
+            var dataString = {"name": name, "email":email, "message":message, "subject":subject}
+            $.ajax({
+                type:"post",
+                url:"email.php",
+                data: dataString,
+                success: function(html) {
+                    $('#feedback').html(html);
+                }
+            });
+          event.preventDefault();
+        });
+    });
+    </script>
   </head>
 
   <body id="page-top">
@@ -184,6 +187,11 @@ $(document).ready(function(){
         </div>
       </div>
       </div>
+      <div class="col-lg-10 mx-auto ">
+        <br> 
+        <h2>Work Experience</h2>
+        <p><b>Front-End Supervisor, Price Rite</b><br>Garfield, NJ<br></p>
+      </div>
     </section>
     <!-- Contact Section -->
     <section id="contact" class="content-section text-center">
@@ -223,31 +231,33 @@ $(document).ready(function(){
 
 
       <!--Contact Form -->
-       <form id ="contact-form" style="display:none" action="email.php" method="post" >
+       <form id ="contact-form" style="display:none" method="post" >
+        <br>
+        <center><div id="feedback" class="alert alert-success offset-sm-1"></div></center>
          <div class="form-group col-md-8 offset-sm-2 text-left" > <!-- Name field -->
-           <label class="control-label " for="name">Name</label>
+           <label class="control-label requiredField" for="name">Name</label>
           <input class="form-control" id="name" name="name" type="text" required="required"/>
          </div>
-  
+      
           <div class="form-group input-group-sm col-md-8 offset-sm-2 text-left"> <!-- Email field -->
-           <label class="control-label requiredField" for="email">Email<span class="asteriskField">*</span></label>
+           <label class="control-label requiredField" for="email">Email</label>
           <input class="form-control" id="email" name="email" type="text" required="required"/>
          </div>
-  
+      
        <div class="form-group col-md-8 offset-sm-2 text-left"> <!-- Subject field -->
-           <label class="control-label " for="subject">Subject</label>
+           <label class="control-label requiredField" for="subject">Subject</label>
           <input class="form-control" id="subject" name="subject" type="text" required="required"/>
          </div>
-    
+      
          <div class="form-group col-md-8 offset-sm-2 text-left"> <!-- Message field -->
-          <label class="control-label " for="message">Message</label>
+          <label class="control-label requiredField" for="message">Message</label>
           <textarea class="form-control" cols="40" id="message" name="message" rows="10" required="required"></textarea>
          </div>
-  
+      
         <div class="form-group col-md-8 offset-sm-2">
-          <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+          <button class="btn btn-primary " name="submit" id="submit" type="submit">Submit</button>
         </div>
-  
+      
        </form> 
       </div>
     </section>
