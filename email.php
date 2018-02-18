@@ -43,7 +43,7 @@ echo"E-mail Sent";
 }
 else
 {
-echo"E-mail failed. Heroku does not allow the use of the php mailer function. E-mail me directly, and I apologize for the inconvenience";
+echo"E-mail failed. Heroku does not allow the use of the php mailer function. E-mail me directly, I apologize for the inconvenience";
 
 } 
 
